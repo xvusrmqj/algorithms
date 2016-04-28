@@ -35,6 +35,7 @@ public class Input {
 	// note:there is no nextChar(), and there is no need.
 	public void differentType() {
 		Scanner scanner = new Scanner("true 0.1 0.2 1 2 3 4");
+		// boolean (not 2bit it's virtual machine dependent.)
 		System.out.println(scanner.nextBoolean());
 		// ∏°µ„–Õfloat(32bit),double(64bit)
 		System.out.println(scanner.nextFloat());
