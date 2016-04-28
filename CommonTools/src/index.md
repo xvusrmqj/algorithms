@@ -1,4 +1,3 @@
-1. 相互转化
-	- 字符串、数组、集合的
-2. 输入功能——Scanner的使用
-3. 
+- [x] 字符串、数组、集合的相互转化: Transform.java
+- [x] 输入功能——Scanner的用例:Input.java
+- [ ] JAVA中数字相关运算，bit如何表示？
