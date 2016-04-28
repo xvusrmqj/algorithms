@@ -13,9 +13,9 @@ import org.junit.Test;
  * double:64bit 
  * char:16bit
  * 
- * note:If you are thinking about using an array of Boolean objects, don't. Use
- * a BitSet instead - it has some performance optimizations (and some nice extra
- * methods, allowing you to get the next set/unset bit)
+ * note:If you are thinking about using an array of Boolean objects, don't 
+ * use boolean[]. Use a BitSet instead - it has some performance optimizations
+ * (and some nice extra methods, allowing you to get the next set/unset bit)
  * 
  * @see http://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html
  * @author lv
