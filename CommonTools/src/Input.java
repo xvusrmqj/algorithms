@@ -5,6 +5,12 @@ import java.util.Scanner;
 
 import org.junit.Test;
 
+/**
+ * 输入相关功能用例
+ * 
+ * @author lv
+ *
+ */
 public class Input {
 	@Test
 	/**
