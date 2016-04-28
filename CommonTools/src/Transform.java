@@ -5,7 +5,7 @@ import java.util.List;
 import org.junit.Test;
 
 /**
- * 转换相关用例
+ * 杞崲鐩稿叧鐢ㄤ緥
  * 1. string<-->charArray: new String(charArray), string.toCharArray.
  * 2. array<-->list: list.toArray(0 size array), Arrays.aslist(array not primitive)
  * 3. array-->string: Arrays.toString(intArr)//print the array is convient

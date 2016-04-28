@@ -6,7 +6,7 @@ import java.util.Scanner;
 import org.junit.Test;
 
 /**
- * ÊäÈëÏà¹Ø¹¦ÄÜÓÃÀı
+ * è¾“å…¥ç›¸å…³åŠŸèƒ½ç”¨ä¾‹
  * 
  * @author lv
  *
@@ -14,9 +14,9 @@ import org.junit.Test;
 public class Input {
 	@Test
 	/**
-	 * nextÓënextLine scannerµÄnext()ºÍnext()·½·¨µÄÇø±ğ¾ÍÊÇnextLine()Ò»´Î¶ÁÈ¡Ò»ĞĞ£¬
-	 * ¶ønext()Ò»´Î¶ÁÈ¡Ò»ĞĞÖĞµÄÒ»¸ö£¨Ä¬ÈÏÒÔ¿Õ¸ñ£¬Tab,»Ø³µ·Ö¸ô£©¡£
-	 * hasNext()ºÍhasNextLine()Ò²ÊÇÈç´Ë¡£²»¹ıÔÚµÈ´ıÉ¨ÃèÊäÈëÊ±£¬´Ë·½·¨×èÈû£¬scanner²»Ö´ĞĞÈÎºÎÊäÈë¡£
+	 * nextä¸nextLine scannerçš„next()å’Œnext()æ–¹æ³•çš„åŒºåˆ«å°±æ˜¯nextLine()ä¸€æ¬¡è¯»å–ä¸€è¡Œï¼Œ
+	 * è€Œnext()ä¸€æ¬¡è¯»å–ä¸€è¡Œä¸­çš„ä¸€ä¸ªï¼ˆé»˜è®¤ä»¥ç©ºæ ¼ï¼ŒTab,å›è½¦åˆ†éš”ï¼‰ã€‚
+	 * hasNext()å’ŒhasNextLine()ä¹Ÿæ˜¯å¦‚æ­¤ã€‚ä¸è¿‡åœ¨ç­‰å¾…æ‰«æè¾“å…¥æ—¶ï¼Œæ­¤æ–¹æ³•é˜»å¡ï¼Œscannerä¸æ‰§è¡Œä»»ä½•è¾“å…¥ã€‚
 	 */
 	// if the input is "a b"
 	public void nextAndNextLine() {
@@ -29,18 +29,18 @@ public class Input {
 
 	@Test
 	/**
-	 * scanner»¹ÓĞnextInt,nextLong,nextByte()...µÈ·½·¨£¬²»¹ı¶¼ÓÃnextLine¶ÁÈ¡ÔÙ×Ô¼º½âÎöÒ²¿ÉÒÔ¡£
-	 * ×Ô¼º½âÎö¿ÉÒÔÊ¹ÓÃstring.split()·½·¨Íê³É¡£
+	 * scannerè¿˜æœ‰nextInt,nextLong,nextByte()...ç­‰æ–¹æ³•ï¼Œä¸è¿‡éƒ½ç”¨nextLineè¯»å–å†è‡ªå·±è§£æä¹Ÿå¯ä»¥ã€‚
+	 * è‡ªå·±è§£æå¯ä»¥ä½¿ç”¨string.split()æ–¹æ³•å®Œæˆã€‚
 	 */
 	// note:there is no nextChar(), and there is no need.
 	public void differentType() {
 		Scanner scanner = new Scanner("true 0.1 0.2 1 2 3 4");
 		// boolean (not 2bit it's virtual machine dependent.)
 		System.out.println(scanner.nextBoolean());
-		// ¸¡µãĞÍfloat(32bit),double(64bit)
+		// æµ®ç‚¹å‹float(32bit),double(64bit)
 		System.out.println(scanner.nextFloat());
 		System.out.println(scanner.nextDouble());
-		// ÕûĞÍ°üÀ¨byte(8bit),short(16bit),int(32bit),long(64bit)
+		// æ•´å‹åŒ…æ‹¬byte(8bit),short(16bit),int(32bit),long(64bit)
 		System.out.println(scanner.nextByte());// -127~127
 		System.out.println(scanner.nextShort());
 		System.out.println(scanner.nextInt());
@@ -50,7 +50,7 @@ public class Input {
 
 	@Test
 	/**
-	 * scanner¿ÉÒÔÊÇÎÄ¼ş£¬InputStream£¬StringµÈ
+	 * scannerå¯ä»¥æ˜¯æ–‡ä»¶ï¼ŒInputStreamï¼ŒStringç­‰
 	 * 
 	 * @throws FileNotFoundException
 	 */
