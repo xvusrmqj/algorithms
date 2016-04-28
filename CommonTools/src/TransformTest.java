@@ -12,7 +12,7 @@ import org.junit.Test;
  * @author lv
  *
  */
-public class Transform {
+public class TransformTest {
 
 	@Test
 	public void string2charArray() {

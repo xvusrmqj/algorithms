@@ -11,7 +11,7 @@ import org.junit.Test;
  * @author lv
  *
  */
-public class Input {
+public class InputTest {
 	@Test
 	/**
 	 * next与nextLine scanner的next()和next()方法的区别就是nextLine()一次读取一行，

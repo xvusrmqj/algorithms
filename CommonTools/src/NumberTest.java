@@ -20,7 +20,8 @@ import org.junit.Test;
  * @see http://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html
  * @author lv
  */
-public class NumberOperation {
+public class NumberTest {
+
 	@Test
 	// BitSet is just like an boolean array which grows as needed.
 	/**
