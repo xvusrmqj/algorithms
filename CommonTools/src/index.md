@@ -1,3 +1,5 @@
-- [x] ×Ö·û´®¡¢Êı×é¡¢¼¯ºÏµÄÏà»¥×ª»¯: Transform.java
-- [x] ÊäÈë¹¦ÄÜ¡ª¡ªScannerµÄÓÃÀı:Input.java
-- [ ] JAVAÖĞÊı×ÖÏà¹ØÔËËã£¬bitÈçºÎ±íÊ¾£¿
+# Plan
+- [x] å­—ç¬¦ä¸²ã€æ•°ç»„ã€é›†åˆçš„ç›¸äº’è½¬åŒ–: Transform.java
+- [x] è¾“å…¥åŠŸèƒ½â€”â€”Scannerçš„ç”¨ä¾‹:Input.java
+- [x] æ•°å­—ç›¸å…³è¿ç®—ï¼Œbitå¦‚ä½•è¡¨ç¤º?:NumberTest.java
+- [x] æ­£åˆ™è¡¨è¾¾å¼ï¼šRegexTest.java
