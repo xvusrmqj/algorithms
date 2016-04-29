@@ -2,7 +2,7 @@ package toolsOperations;
 import commonOperations.InputTest;
 
 /**
- * 对于注释的说明
+ * 注释用法的说明
  * @author lv
  * 
  */
