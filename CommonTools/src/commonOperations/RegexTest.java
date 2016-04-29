@@ -37,7 +37,7 @@ public class RegexTest {
 	@Test
 	/**
 	 * use regex with the Matcher class and Pattern class.
-	 * TODO later add. It is possible be used less in interview.
+	 * TODO the Matcher and Pattern will implement later.
 	 */
 	public void useInMatcher(){
 		
