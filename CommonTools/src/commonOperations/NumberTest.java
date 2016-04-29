@@ -36,6 +36,7 @@ public class NumberTest {
 		System.out.println(Math.floor(11));
 		System.out.println(Math.round(11.2));
 		// max and min
+		// if(a>b) return a; else return b <==> return a>b?a:b <==> return max(a,b);
 		System.out.println(Math.max(1, 2));
 		System.out.println(Math.min(1, 2));
 		//平方根, 立方根, 乘方
