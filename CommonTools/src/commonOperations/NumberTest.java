@@ -1,5 +1,6 @@
 package commonOperations;
 import java.util.BitSet;
+import java.util.Random;
 
 import org.junit.Test;
 
@@ -22,7 +23,37 @@ import org.junit.Test;
  * @author lv
  */
 public class NumberTest {
-
+	//Math类中有很多实用的方法
+	@Test
+	public void testMathClass(){
+		//PI , e
+		System.out.println(Math.E);
+		System.out.println(Math.PI);
+		// 向上取整, 向下取整, 四舍五入 
+		System.out.println(Math.ceil(11.2));
+		System.out.println(Math.ceil(11));
+		System.out.println(Math.floor(11.2));
+		System.out.println(Math.floor(11));
+		System.out.println(Math.round(11.2));
+		// max and min
+		System.out.println(Math.max(1, 2));
+		System.out.println(Math.min(1, 2));
+		//平方根, 立方根, 乘方
+		System.out.println(Math.sqrt(4));
+		System.out.println(Math.cbrt(8));
+		System.out.println(Math.pow(2,3));
+		//对数
+		System.out.println(Math.log(Math.E));//e
+		System.out.println(Math.log10(10));//10
+		//绝对值
+		System.out.println(Math.abs(-4));
+		//随机数
+		System.out.println(Math.random());//the value belong to [0.0,1.0]
+		// random is a better choice
+		System.out.println(new Random().nextInt(8));
+		System.out.println(new Random().nextInt());
+		System.out.println(new Random().nextFloat());
+	}
 	@Test
 	// BitSet is just like an boolean array which grows as needed.
 	/**
