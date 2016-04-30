@@ -15,7 +15,7 @@ import org.junit.Test;
 public class NO121 {
 	@Test
 	public void test(){
-		// in leetcode . input:[1] output:0
+		// in leetcode . input:[1] expected :0
 		int[] prices = {1};
 		int result = maxProfit_wrong(prices);
 		assertEquals(0,result);
