@@ -8,4 +8,4 @@
 
 ## 常见工具包使用
 - [x] javadoc使用：AnnotationExplainations.java
-- [ ] junit使用：JunitExplainations.java
+- [x] junit使用：JunitExplainations.java
