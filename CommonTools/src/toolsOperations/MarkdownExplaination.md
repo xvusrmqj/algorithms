@@ -2,11 +2,6 @@
 
 
 Github用的[GFM][1]，风格很漂亮，简洁美观大方。 GFM对标准[Markdown][2]做了一些修改。
-
-## 换行
-标准MD要在一行的最后加两个空格符才表示换行，否则是不换行的。但是GFM则没有此要求。
-第一行  
-第二行
 ## 斜体
 标准MD使用在词组两边添加下划线来实现斜体，例如_text_。但是这样对计算机世界来说并不合适，我们也许经常需要提到多个下划线组成的词组，例如 do_some_thing。
 ## 自动URL链接
@@ -40,5 +35,5 @@ Github的Markdown语法支持添加emoji表情，输入不同的符号码（两�
 [1]: https://help.github.com/categories/writing-on-github/
 [2]: http://daringfireball.net/projects/markdown/syntax
 参考：
-1. http://www.jianshu.com/p/cfPxyr
+1. http://www.jianshu.com/p/cfPxyr  
 2. https://github.com/guodongxiaren/README
