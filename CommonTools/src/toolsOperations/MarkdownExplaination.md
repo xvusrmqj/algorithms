@@ -1,7 +1,7 @@
 # Github Flavored Markdown的使用说明
-引用：http://www.jianshu.com/p/cfPxyr
 
-Github用的[GFM][1]，风格很漂亮，简洁美观大方。 GFM对标准[Markdown][2]做了少了修改，例如如下的内容。
+
+Github用的[GFM][1]，风格很漂亮，简洁美观大方。 GFM对标准[Markdown][2]做了一些修改。
 
 ## 换行
 标准MD要在一行的最后加两个空格符才表示换行，否则是不换行的。但是GFM则没有此要求。
@@ -12,11 +12,9 @@ Github用的[GFM][1]，风格很漂亮，简洁美观大方。 GFM对标准[Mark
 ## 自动URL链接
 一个小优化，如果你直接在GFM中写一个URL链接文本，那么也会自动生成URL，同时文字也显示为该链接本身。例如，https://github.com
 ### 代码段和代码高亮
-如果代码段每行前使用4个空格对齐，标准MD就会识别为代码段，GFM也支持这样的语法，同时GFM还设计了一种优化的语法，就是在代码段的头尾行使用<code>```</code>，这样你就不需要考虑代码前的对齐了。你还可以加上语言标识，这样就可以支持代码语法高亮，例如：
-```
-require 'redcarpet'
-markdown = Redcarpet.new("Hello World!")
-puts markdown.to_html
+在三个反引号后面加上编程语言的名字，另起一行开始写代码，最后一行再加上三个反引号。
+```Java
+public static void main(String[]args){} //Java
 ```
 ## 任务列表
 GFM支持把列表变成带勾选框的任务列表，只需要修改列表前序号的格式为- [ ]或者- [x]。看起来效果就像下面这样的：
@@ -24,5 +22,23 @@ GFM支持把列表变成带勾选框的任务列表，只需要修改列表前�
 - [x] def [this](./JunitExplainations.java) 
 - [ ] ghi
 
+## 表格
+
+表头1  | 表头2
+:--------- | --------:
+hello  | hello
+表格单元  | 表格单元 
+## 文字高亮
+文字高亮功能能使行内部分文字高亮，使用一对反引号。
+`linux` `网络编程` `socket` `epoll` 
+
+##表情
+Github的Markdown语法支持添加emoji表情，输入不同的符号码（两个冒号包围的字符）可以显示出不同的表情。
+
+比如`:blush`:，可以显示:blush:。
+
 [1]: https://help.github.com/categories/writing-on-github/
 [2]: http://daringfireball.net/projects/markdown/syntax
+参考：
+1. http://www.jianshu.com/p/cfPxyr
+2. https://github.com/guodongxiaren/README
