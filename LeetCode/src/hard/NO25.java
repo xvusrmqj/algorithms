@@ -19,14 +19,10 @@ import tools.ListNode;
  *
  */
 public class NO25 {
-    /*public ListNode reverseKGroup(ListNode head, int k) {
-        //boundary condition XXX
-    	
-    	//
-    	ListNode p ;
-    	ListNode q = head;
-    	for(int i =0;i<k;i++){
-    		p = q.next;
-    	}
-    }*/
+	/**
+	 * 未做出。
+	 */
+    public ListNode reverseKGroup(ListNode head, int k) {
+    	return null;
+    }
 }
