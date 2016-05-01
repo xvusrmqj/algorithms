@@ -20,9 +20,10 @@ puts markdown.to_html
 ```
 ## 任务列表
 GFM支持把列表变成带勾选框的任务列表，只需要修改列表前序号的格式为- [ ]或者- [1]。看起来效果就像下面这样的：
-- [] abc #40
-- [] def this link
-- [] ghi
+- [ ] abc #40
+- [2] abc #40
+- [x] def this link
+- [1] ghi
 
 [1]: https://help.github.com/categories/writing-on-github/
 [2]: http://daringfireball.net/projects/markdown/syntax
