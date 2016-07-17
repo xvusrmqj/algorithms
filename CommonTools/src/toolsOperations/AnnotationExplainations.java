@@ -1,5 +1,5 @@
 package toolsOperations;
-import commonOperations.InputTest;
+import io.InputTest;
 
 /**
  * 注释用法的说明
