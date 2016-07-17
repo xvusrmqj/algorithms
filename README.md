@@ -1,6 +1,6 @@
 # algorithms
 this is the repository that include common algorithms programm.
-The context about as follows:
+Some relevant information about as follows:
 - Programming language : JAVA
 - IDE: eclipse
 - Operating System：Window
