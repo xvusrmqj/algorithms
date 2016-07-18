@@ -23,7 +23,7 @@ public class FileTest {
 		String path1 = ".." + File.separator + "resources" + File.separator + "createFile.txt";
 		// path2 will create success.
 		String path2 = "src" + File.separator + "resources" + File.separator + "createFile.txt";
-		// 通常都是创建到class路径下，而不是src下。
+		// 通常都是创建到class路径下，而不是src下,虽然src下也能拷备到class下
 		String path3 = getClass().getResource("/").getPath();
 		path3 += "resources/temp/test.txt";
 		File f = new File(path3);
