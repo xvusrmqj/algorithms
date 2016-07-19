@@ -36,6 +36,9 @@ public class FileTest {
 		// 1. 打印工作目录。
 		String property = System.getProperty("user.dir");
 		System.out.println(property);
+		// 打印行结束符
+		String line_separator = System.getProperty("line.separator");
+		System.out.println("line_separator:"+line_separator);
 		// 2. 打印分隔符
 		String separator = File.separator;
 		System.out.println(separator);

@@ -48,33 +48,42 @@ public class ListNode {
 		return pointFrom;
 	}
 
-	// 使用头插法应该就可以。
-	public static ListNode reverse1(ListNode head) {
-		if (head == null)
-			return null;
-		// 先初始化一个头结点
-		ListNode newHead = new ListNode(-1);
-		ListNode current = head;
-		ListNode next;
-		while (current != null) {
-			next = current.next;
-			current.next = newHead.next;
-			newHead.next = current;
-			current = next;
-		}
-		// 再删除这个头结点
-		return newHead.next;
-	}
+	// 头插法
+    public static ListNode reverse1(ListNode list){
+        ListNode newList = new ListNode(0);// 先初始化一个头结点
+        ListNode tmp = null; //防止链表断开。
+        while(list!=null){
+        	tmp = list.next; //先临时存起来
+        	list.next = newList.next;
+            newList.next = list;
+            list = tmp; //最后再取出来
+        }
+        return newList.next;// 再删除这个头结点
+    }
+    // 头插法反转单链表，但是不改变原链表结构。
+    public static ListNode reverseCopy(ListNode list){
+    	ListNode newList = new ListNode(0);// 先初始化一个头结点
+    	while(list!=null){
+    		ListNode node = new ListNode(list.val);
+    		node.next = newList.next;
+    		newList.next = node;
+    		
+    		list = list.next;
+    	}
+    	return newList.next;// 再删除这个头结点
+    }
 
 	// 测试initListByArray和printList方法。
 	public static void main(String[] args) {
-		int[] arr = { 1, 2, 3, 4, 5 };
-		ListNode initListByArray = initListByArray(arr);
+		int[] arr1 = { 1, 2, 3, 4, 5 };
+		int[] arr2 = { 1 };
+		int[] arr3 = {};
+		ListNode initListByArray = initListByArray(arr1);
 		printList(initListByArray);
 
-		ListNode reverse = reverse(initListByArray);
+		ListNode reverse = reverseCopy(initListByArray);
 		printList(reverse);
-
+		printList(initListByArray);
 	}
 }
 /**
