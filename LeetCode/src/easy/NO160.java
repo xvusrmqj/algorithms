@@ -29,7 +29,7 @@ import tools.ListNode;
  * may assume there are no cycles anywhere in the entire linked structure. Your
  * code should preferably run in O(n) time and use only O(1) memory.
  */
-//http://www.cnblogs.com/higerzhang/p/4175112.html
+//http://www.cnblogs.com/higerzhang/p/4175112.htmlgit
 public class NO160 {
 	@Test
 	public void test() {

@@ -17,18 +17,18 @@ public class NO21 {
 	public void test() {
 		//input : [2] [1] 
 		//expected: [1,2]
-		ListNode list1 = new ListNode(2);
-		ListNode list2= new ListNode(1);
-		ListNode list3 = mergeTwoLists(list1, list2);
+		ListNode<Integer> list1 = new ListNode<Integer>(2);
+		ListNode<Integer> list2= new ListNode<Integer>(1);
+		ListNode<Integer> list3 = mergeTwoLists(list1, list2);
 		ListNode.printList(list3);
 	}
 
 
-	public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+	public ListNode<Integer> mergeTwoLists(ListNode<Integer> l1, ListNode<Integer> l2) {
 
 		//先弄一个头结点，最后再删除。
-		ListNode listNode = new ListNode(0);
-		ListNode point = listNode;
+		ListNode<Integer> listNode = new ListNode<Integer>(0);
+		ListNode<Integer> point = listNode;
 		// 找小的，加入新单链表后右移指针
 		while(l1!=null&&l2!=null){
 			
