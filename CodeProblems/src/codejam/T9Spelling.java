@@ -1,3 +1,4 @@
+package codejam;
 
 public class T9Spelling {
 
