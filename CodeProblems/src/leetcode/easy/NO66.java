@@ -1,4 +1,4 @@
-package easy;
+package leetcode.easy;
 
 import static org.junit.Assert.*;
 
