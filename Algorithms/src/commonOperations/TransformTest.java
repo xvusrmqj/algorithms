@@ -1,4 +1,5 @@
 package commonOperations;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -29,7 +30,7 @@ public class TransformTest {
 		char[] charArray = { 'a', 'b', 'c', 'd' };
 		System.out.println(new String(charArray));
 	}
-	
+
 	@Test
 	public void list2array() {
 		List<String> list = new ArrayList<>();
@@ -38,34 +39,37 @@ public class TransformTest {
 		list.add("ccc");
 		//this method return an object array.
 		Object[] array = list.toArray();
-		for(Object s : array){
+		for (Object s : array) {
 			System.out.println(s);
 		}
 		System.out.println("-------------------");
 		//this method return a special type array. the argument is an array which size is 0 generally. 
 		String[] array2 = list.toArray(new String[0]);
-		for(String s : array2){
+		for (String s : array2) {
 			System.out.println(s);
 		}
 	}
 
 	@Test
+	// 请避免使用这个坑货.
+	// http://wiki.jikexueyuan.com/project/java-enhancement/java-thirtysix.html
 	public void array2list() {
-		String[] stringArr = {"a","b","c"};
+		String[] stringArr = { "a", "b", "c" };
 		List<String> asList = Arrays.asList(stringArr);
-		for(String s:asList){
+		for (String s : asList) {
 			System.out.println(s);
 		}
 		//this is an error. you can not use asList() to transform a primitive type.
-//		int[] intArr = {1,2,3,4,5};
-//		List<Integer> list = Arrays.asList(intArr);
-//		for (Integer i : asList) {
-//			System.out.println(i);
-//		}
+		//		int[] intArr = {1,2,3,4,5};
+		//		List<Integer> list = Arrays.asList(intArr);
+		//		for (Integer i : asList) {
+		//			System.out.println(i);
+		//		}
 	}
+
 	@Test
 	public void array2string() {
-		int[]  intArr = {1,2,3};
+		int[] intArr = { 1, 2, 3 };
 		String string = Arrays.toString(intArr);
 		System.out.println(string);
 	}

@@ -1,4 +1,5 @@
 package commonOperations;
+
 import java.util.BitSet;
 import java.util.Random;
 
@@ -7,13 +8,13 @@ import org.junit.Test;
 /**
  * the size of primitive data type.
  * boolean: vm dependency.
- * byte:8bit
- * short:16bit
- * int:32bit
- * long:64bit
- * float:32bit
- * double:64bit 
- * char:16bit
+ * byte:	8bit
+ * short:	16bit
+ * int:		32bit
+ * long:	64bit
+ * float:	32bit
+ * double:	64bit 
+ * char:	16bit
  * 
  * note:If you are thinking about using an array of Boolean objects, don't 
  * use boolean[]. Use a BitSet instead - it has some performance optimizations
@@ -25,7 +26,7 @@ import org.junit.Test;
 public class NumberTest {
 	//Math类中有很多实用的方法
 	@Test
-	public void testMathClass(){
+	public void testMathClass() {
 		//PI , e
 		System.out.println(Math.E);
 		System.out.println(Math.PI);
@@ -42,7 +43,7 @@ public class NumberTest {
 		//平方根, 立方根, 乘方
 		System.out.println(Math.sqrt(4));
 		System.out.println(Math.cbrt(8));
-		System.out.println(Math.pow(2,3));
+		System.out.println(Math.pow(2, 3));
 		//对数
 		System.out.println(Math.log(Math.E));//e
 		System.out.println(Math.log10(10));//10
@@ -55,6 +56,7 @@ public class NumberTest {
 		System.out.println(new Random().nextInt());
 		System.out.println(new Random().nextFloat());
 	}
+
 	@Test
 	// BitSet is just like an boolean array which grows as needed.
 	/**

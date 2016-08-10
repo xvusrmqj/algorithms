@@ -8,23 +8,64 @@ package java基础;
  */
 public class 回调 {
 	public static void main(String[] args) {
-		new 厨师().做菜(new 小工());
+		//		new A().aFun(new B());
+		//		new A2().a2Fun(new B2());
+		new B3().b2Fun(new Callback() {
+			@Override
+			public void callback() {
+				System.out.println("回调方法----");
+			}
+		});
 	}
 
-	static class 厨师 {
-		public void 做菜(小工 a) {
-			a.刷锅(this);
+	static class A {
+		public void aFun(B a) {
+			a.bFun(this);
 		}
 
-		public void 做菜() {
-			System.out.println("做菜完成----");
+		public void aFun2() {
+			System.out.println("回调方法----");
 		}
 	}
 
-	static class 小工 {
-		public void 刷锅(厨师 b) {
-			System.out.println("刷锅完成----");
-			b.做菜();
+	static class B {
+		public void bFun(A b) {
+			System.out.println("调用方法----");
+			b.aFun2();
+		}
+	}
+
+	//--------------第二种回调,用一个接口-----------------
+	static class A2 implements Callback {
+		public void a2Fun(B2 b) {
+			b.b2Fun(this);
+
+		}
+
+		@Override
+		public void callback() {
+			System.out.println("回调方法----");
+		}
+
+	}
+
+	interface Callback {
+		void callback();
+	}
+
+	static class B2 {
+		public void b2Fun(Callback c) {
+			System.out.println("调用方法----");
+			c.callback();
+		}
+	}
+
+	//---------------第三种, 一般可能这样用-----------
+	//直接来一个匿名内部类, 最方便了.
+	static class B3 {
+		public void b2Fun(Callback c) {
+			System.out.println("调用方法----");
+			c.callback();
 		}
 	}
 }
