@@ -1,4 +1,4 @@
-package leetcode.easy;
+package leetcode.medium;
 
 /**
 376. Wiggle Subsequence
