@@ -29,7 +29,7 @@ There are several subsequences that achieve this length. One is [1,17,10,13,10,1
 Input: [1,2,3,4,5,6,7,8,9]
 Output: 2
 */
-public class NO367 {
+public class NO376 {
 	/**
 	 * 本题的错误是方法的错误. 而在错误的方法里一直死扣. 
 	 * 测试用例没有考虑重复的问题.
