@@ -1,9 +1,5 @@
 package leetcode.easy;
 
-import org.junit.Test;
-
-import tools.TreeNode;
-
 /**
 376. Wiggle Subsequence
 A sequence of numbers is called a wiggle sequence if the differences between 
