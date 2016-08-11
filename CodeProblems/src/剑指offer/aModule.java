@@ -1,5 +1,10 @@
 package 剑指offer;
-
+/**
+ * 
+ * 
+ * @author lv
+ *
+ */
 public class aModule {
 
 	public static void main(String[] args) {
