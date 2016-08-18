@@ -1,4 +1,4 @@
-package 基础算法.排序.高级排序;
+package 基础算法.排序.基础排序;
 
 import java.util.Arrays;
 
