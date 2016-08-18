@@ -7,7 +7,7 @@ import org.junit.Test;
 public class 选择排序 {
 	@Test
 	public void test() {
-		//		1. null
+		//		1. null  
 		fun(null);
 		//		2. {}
 		fun(new int[] {});
