@@ -37,7 +37,6 @@ public class 线程状态转换 {
 						try {
 							this.sleep(1234);
 						} catch (InterruptedException e) {
-							// TODO Auto-generated catch block
 							e.printStackTrace();
 						}
 						

@@ -24,7 +24,7 @@ Note: m and n will be at most 100.
 public class NO63 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		// TODO
 
 	}
     public static int uniquePathsWithObstacles(int[][] obstacleGrid) {

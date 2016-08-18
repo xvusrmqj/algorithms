@@ -15,12 +15,12 @@ import 互联网公司.网易.二叉树.ReverseTree;
  *
  */
 public class 二叉树 {
-	private static  void xxx() {
-		// TODO Auto-generated method stub
-System.out.println("--------");
+	private static void xxx() {
+		System.out.println("--------");
 	}
+
 	public static void main(String[] args) {
-		((二叉树)null).xxx();
+		((二叉树) null).xxx();
 	}
 
 	int max = Integer.MIN_VALUE;
