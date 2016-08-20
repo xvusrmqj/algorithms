@@ -8,7 +8,7 @@ NOTE：给出的所有元素都大于0，若数组大小为0，请返回0。
  * @author lv
  *
  */
-public class 旋转数组的最小数字 {
+public class S8旋转数组的最小数字 {
 
 	public static void main(String[] args) {
 		int[] arr = {};
