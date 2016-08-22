@@ -14,13 +14,9 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:launchMode="singleTask" 
             android:name=".MainActivity"
-            android:label="@string/app_name" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:label="@string/app_name"
+            android:launchMode="singleTask" >
         </activity>
         <activity android:name="components.activity.task.SingleTaskActivity1" />
         <activity android:name="components.activity.task.SingleTaskActivity2" />
@@ -37,6 +33,29 @@
                 <action android:name="android.intent.action.LVTESTRECEIVER" />
             </intent-filter>
         </receiver>
+        <!-- 使用Messenger进行IPC通信 -->
+        <service
+            android:name="ipc.messager_test.MessengerService"
+            android:process=":remote" >
+        </service>
+
+        <activity android:name="ipc.messager_test.MessengerClient" >
+        </activity>
+        <!-- 主线程与后台线程交互 -->
+        <activity android:name="multi_thread.ViewPost" >
+        </activity>
+        <activity android:name="multi_thread.RunOnUiThread" >
+        </activity>
+        <activity android:name="multi_thread.HandlerSendMsg" >
+        </activity>
+        <activity android:name="multi_thread.HandlerPostRunnable" >
+        </activity>
+        <activity android:name="multi_thread.AsyncTaskTest" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
