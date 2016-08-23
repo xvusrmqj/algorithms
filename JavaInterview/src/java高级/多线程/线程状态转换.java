@@ -35,7 +35,7 @@ public class 线程状态转换 {
 				for(int i = 0;i<20;i++){
 					if(i==10)
 						try {
-							this.sleep(1234);
+							Thread.sleep(1234);
 						} catch (InterruptedException e) {
 							e.printStackTrace();
 						}
@@ -47,7 +47,7 @@ public class 线程状态转换 {
 		thread.start();
 		//2. 就绪--->运行
 		//3. 运行到--->就绪
-		thread.yield();
+		Thread.yield();
 		
 	}
 	//when new Thread()，the thread 创建.
