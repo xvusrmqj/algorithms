@@ -8,14 +8,14 @@ import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 
 public class BookProvider extends ContentProvider {
-
-	public static final String AUTHORITY = "ipc.contentprovider.BookProvider";
-	public static final Uri BOOK_CONTENT_URI = Uri.parse("content://" + AUTHORITY + "/book");
-	public static final UriMatcher uriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
-	private SQLiteDatabase db;
-	static {
-		uriMatcher.addURI(AUTHORITY, "book", 0);
-	}
+// 这里暂时没有用到UriMatcher， 因为就一个表也没啥要匹配的。
+//	public static final String AUTHORITY = "ipc.contentprovider.BookProvider";
+//	public static final Uri BOOK_CONTENT_URI = Uri.parse("content://" + AUTHORITY + "/book");
+//	public static final UriMatcher uriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
+//	static {
+//		uriMatcher.addURI(AUTHORITY, "book", 0);
+//	}
+	private SQLiteDatabase db;  
 
 	@Override
 	public boolean onCreate() {
