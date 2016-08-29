@@ -41,6 +41,24 @@
 
         <activity android:name="ipc.messager_test.MessengerClient" >
         </activity>
+        <!-- 使用AIDL进行IPC通信 -->
+        <service
+            android:name="ipc.aidl_test.service.BookManagerService"
+            android:process=":remote1" >
+        </service>
+
+        <activity android:name="ipc.aidl_test.client.BookManagerClient" >
+        </activity>
+        <!-- 使用ContentProvider进行IPC通信 -->
+        <provider
+            android:name="ipc.contentprovider.server.BookProvider"
+            android:authorities="ipc.contentprovider.BookProvider"
+            android:permission="ipc.contentprovider.BookProvider"
+            android:process=":provider" >
+        </provider>
+
+        <activity android:name="ipc.contentprovider.client.ProviderActivity" >
+        </activity>
         <!-- 主线程与后台线程交互 -->
         <activity android:name="multi_thread.ViewPost" >
         </activity>
@@ -51,11 +69,18 @@
         <activity android:name="multi_thread.HandlerPostRunnable" >
         </activity>
         <activity android:name="multi_thread.AsyncTaskTest" >
+        </activity>
+        <!-- 使用IntentService进程耗时任务 -->
+        <activity android:name="components.service.intentService.Client" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service android:name="components.service.intentService.Server" >
+        </service>
     </application>
 
 </manifest>
