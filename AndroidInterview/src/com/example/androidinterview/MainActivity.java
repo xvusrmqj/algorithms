@@ -38,11 +38,6 @@ public class MainActivity extends Activity {
 		Toast.makeText(this, "-------onSaveInstanceState-----", 1).show();
 	}
 
-	private void 发送广播() {
-		// sendBroadcast(new Intent("android.intent.action.LVTESTRECEIVER"));//正常广播
-		sendOrderedBroadcast(new Intent("android.intent.action.LVTESTRECEIVER"), null);//有序广播
-	}
-
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.

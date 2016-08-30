@@ -35,8 +35,8 @@ public class MessengerClient extends Activity {
 				bundle.putString("key", "client--come from client");
 				msg.setData(bundle);
 				//将这个传过去，服务端就能给客户端发东西了。
-				msg.replyTo = new Messenger(clientHandler);
-				new Messenger(ibinder).send(msg);
+				msg.replyTo = new Messenger(clientHandler);//构造函数要一个hindler, 向服务器端传一个构子
+				new Messenger(ibinder).send(msg);//构造函数要一个ibinder, 这个是直接的服务端.
 			} catch (RemoteException e) {
 				e.printStackTrace();
 			}

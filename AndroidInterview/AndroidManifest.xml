@@ -22,7 +22,9 @@
         <activity android:name="components.activity.task.SingleTaskActivity2" />
         <activity android:name="components.activity.task.SingleTaskActivity3" />
         <activity android:name="components.activity.task.SingleTaskActivity4" />
-
+        <!-- 广播 -->        
+        <activity android:name="components.broadcastreciver.ClientActivity" >
+        </activity>
         <receiver android:name="components.broadcastreciver.CommonReciver" >
             <intent-filter>
                 <action android:name="android.intent.action.LVTESTRECEIVER" />
@@ -71,16 +73,15 @@
         <activity android:name="multi_thread.AsyncTaskTest" >
         </activity>
         <!-- 使用IntentService进程耗时任务 -->
-        <activity android:name="components.service.intentService.Client" >
+        <activity android:name="components.service.Client" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <service android:name="components.service.intentService.Server" >
-        </service>
+        <service android:name="components.service.IntentServiceTest" />
+        <service android:name="components.service.ServiceTest" />
     </application>
 
 </manifest>

@@ -7,11 +7,6 @@ public class Book implements Parcelable {
 	private int bookId;
 	private String bookname;
 
-	public Book(Parcel in) {
-		bookId = in.readInt();
-		bookname = in.readString();
-	}
-
 	@Override
 	public String toString() {
 		return "bookid=" + bookId + ",bookname = " + bookname;
@@ -42,7 +37,9 @@ public class Book implements Parcelable {
 
 		@Override
 		public Book createFromParcel(Parcel source) {
-			return new Book(source);
+			int bookId = source.readInt();
+			String bookname = source.readString();
+			return new Book(bookId,bookname);
 		}
 	};
 }
