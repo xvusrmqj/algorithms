@@ -29,7 +29,7 @@ public class 线程的同步  extends Thread {
 	public void run() {
 		for (int i = 0; i < 100; i++) {
 			try {
-				Thread.currentThread().sleep(300);
+				Thread.sleep(300);
 				System.out.println(Thread.currentThread().getName()+": " +getI());
 			} catch (InterruptedException e) {
 				e.printStackTrace();
