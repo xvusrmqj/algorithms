@@ -19,7 +19,6 @@ public class 深度优先遍历 {
 				depthSearch(g, v);
 			}
 		}
-		//		System.out.println(g);
 	}
 
 	static void depthSearch(Graph g, String v) {
