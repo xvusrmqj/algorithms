@@ -19,9 +19,6 @@ public class Client extends Activity implements View.OnClickListener {
 		super.onCreate(savedInstanceState);
 		//初始化一个线性布局
 		LinearLayout ll = new LinearLayout(this);
-		FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(LayoutParams.MATCH_PARENT,
-				LayoutParams.MATCH_PARENT);
-		ll.setLayoutParams(params);
 		btn1 = new Button(this);
 		btn1.setText("startService");
 		btn2 = new Button(this);

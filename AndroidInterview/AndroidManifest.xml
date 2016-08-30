@@ -22,9 +22,10 @@
         <activity android:name="components.activity.task.SingleTaskActivity2" />
         <activity android:name="components.activity.task.SingleTaskActivity3" />
         <activity android:name="components.activity.task.SingleTaskActivity4" />
-        <!-- 广播 -->        
+        <!-- 广播 -->
         <activity android:name="components.broadcastreciver.ClientActivity" >
         </activity>
+
         <receiver android:name="components.broadcastreciver.CommonReciver" >
             <intent-filter>
                 <action android:name="android.intent.action.LVTESTRECEIVER" />
@@ -76,12 +77,20 @@
         <activity android:name="components.service.Client" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
         <service android:name="components.service.IntentServiceTest" />
         <service android:name="components.service.ServiceTest" />
+        <!-- View的三种滑动处理方式 -->
+        <activity android:name="view.three_scroll_ways.ScrollActivity" >
+        </activity>
+        <activity android:name="view.three_scroll_ways.AnimationActivity" >
+        </activity>
+        <activity android:name="view.three_scroll_ways.LayoutActivity" >
+        </activity>
     </application>
 
 </manifest>
