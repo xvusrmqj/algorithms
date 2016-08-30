@@ -9,7 +9,7 @@ public class CommonReciver extends BroadcastReceiver {
 
 	@Override
 	public void onReceive(Context context, Intent arg1) {
-		Toast.makeText(context, "CommonReciver", 1).show();
+		Toast.makeText(context, "CommonReciver后收到", 1).show();
 	}
 
 }
