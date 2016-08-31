@@ -5,7 +5,7 @@ package 编程之美;
  * @author lv
  *
  */
-public class NO216 {
+public class NO2_16 {
 
 	public static void main(String[] args) {
 		int[][] arr = { { 9, 10, 1, 2, 3 }, //3	
