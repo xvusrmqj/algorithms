@@ -22,7 +22,7 @@ public class NO2_1 {
 	}
 
 	@Test
-	public void testCount1() {
+	public void test() {
 //		Assert.assertEquals(0, count1(0));
 //		Assert.assertEquals(1, count1(1));
 //		Assert.assertEquals(1, count1(2));
