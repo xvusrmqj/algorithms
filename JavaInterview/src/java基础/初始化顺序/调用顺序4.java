@@ -20,7 +20,7 @@ cupboard
 f1:2
 f2:1
 f3:1*/
-public class 多态调用顺序4 {
+public class 调用顺序4 {
 
 	static class Bowl {
 		Bowl(int marker){

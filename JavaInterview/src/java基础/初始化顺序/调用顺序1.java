@@ -1,7 +1,7 @@
 package java基础.初始化顺序;
 
 //这个打印什么?
-public class 多态调用顺序1 {
+public class 调用顺序1 {
 	public static void main(String[] args) {
 		new B();
 	}

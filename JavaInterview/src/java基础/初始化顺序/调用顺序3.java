@@ -13,7 +13,7 @@ Base()---
 Child----
 Child()---
 end--------*/
-public class 多态调用顺序3 {
+public class 调用顺序3 {
 
 	static class Base {
 		static {
