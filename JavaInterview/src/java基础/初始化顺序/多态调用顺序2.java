@@ -1,6 +1,7 @@
 package java基础.初始化顺序;
 
 //这个打印什么?
+// 1,5,2,3,6,8
 public class 多态调用顺序2 {
 	public static void main(String[] args) {
 		new B("x");

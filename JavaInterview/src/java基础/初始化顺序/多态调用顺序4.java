@@ -1,6 +1,25 @@
 package java基础.初始化顺序;
 
 //这个打印什么?
+/*bowl:1
+bowl:2
+table
+f1:1
+bowl:4
+bowl:5
+bowl:3
+cupboard
+f1:2
+new cupboard--------
+bowl:3
+cupboard
+f1:2
+new cupboard--------
+bowl:3
+cupboard
+f1:2
+f2:1
+f3:1*/
 public class 多态调用顺序4 {
 
 	static class Bowl {

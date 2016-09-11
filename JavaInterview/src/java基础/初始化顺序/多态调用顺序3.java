@@ -1,6 +1,18 @@
 package java基础.初始化顺序;
 
-//这个打印什么?
+//这个打印什么?----------------------
+/*Base---static
+Child---static
+begin--------
+Base---
+Base()---
+Child----
+Child()---
+Base---
+Base()---
+Child----
+Child()---
+end--------*/
 public class 多态调用顺序3 {
 
 	static class Base {
