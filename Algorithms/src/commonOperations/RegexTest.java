@@ -62,7 +62,7 @@ public class RegexTest {
 	}
 	@Test
 	public void testMatcherFun(){
-		Matcher m4 = Pattern.compile("hi").matcher("hi hi 223 hi 123 hi");
+		Matcher m4 = Pattern.compile("hi").matcher("hi1 hi2 223 hi3 123 hi4");
 		boolean matches = m4.matches();// 整个字符串是否匹配
 		boolean lookingAt = m4.lookingAt();//整个字符串起始部分是否匹配
 		boolean find = m4.find();//查找字符串中的多个匹配
@@ -73,7 +73,12 @@ public class RegexTest {
 		System.out.println(lookingAt);//这时为真
 		System.out.println(find);//这时为真, 注意体会它和Matcher的不同.
 		System.out.println(group);
-		
+		System.out.println("-------");
+		Matcher m5 = Pattern.compile("hi\\d").matcher("hi1 hi2 223 hi3 123 hi4");
+		while(m5.find()){
+			String group2 = m5.group();
+			System.out.println(group2);
+		}
 		
 	}
 	
