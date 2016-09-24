@@ -10,6 +10,7 @@ public class OrderedBroadcastReciver extends BroadcastReceiver {
 	@Override
 	public void onReceive(Context context, Intent arg1) {
 		Toast.makeText(context, "OrderedBroadcastReciver先收到", 1).show();
+//		abortBroadcast();//可以终止广播给下一个.
 	}
 
 }

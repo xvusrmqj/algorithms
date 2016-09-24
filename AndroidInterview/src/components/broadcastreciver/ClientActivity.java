@@ -1,7 +1,9 @@
 package components.broadcastreciver;
 
 import android.app.Activity;
+import android.content.BroadcastReceiver;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -19,6 +21,13 @@ public class ClientActivity extends Activity {
 		Button btn = new Button(this);
 		btn.setText("发送广播的Activity");
 		setContentView(btn);
+	}
+
+	@Override
+	protected void onStart() {
+		CommonReceiver receiver = new CommonReceiver();
+		registerReceiver(receiver, new IntentFilter("hello.client"));
+		unregisterReceiver(receiver);
 	}
 
 	@Override
