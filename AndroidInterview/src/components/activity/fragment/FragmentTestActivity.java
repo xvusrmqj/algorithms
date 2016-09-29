@@ -21,6 +21,7 @@ public class FragmentTestActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
+				// add a fragment in an activity
 				FragmentManager manager = getFragmentManager();
 				manager.beginTransaction()//
 						.add(root.getId(), new MyFragment1())//

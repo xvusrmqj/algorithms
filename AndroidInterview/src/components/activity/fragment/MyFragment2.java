@@ -7,22 +7,17 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
 
-public class MyFragment1 extends Fragment {
+public class MyFragment2 extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.fragment_my1, container, false);
-		View btn = view.findViewById(R.id.btn);
-		btn.setOnClickListener(new View.OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				// replace to another fragment 
-				getFragmentManager().beginTransaction()//
-				.replace(getActivity().findViewById(R.id.root).getId(), new MyFragment2())
-				.commit();
-			}
-		});
+		TextView findViewById = (TextView) view.findViewById(R.id.textView);
+		findViewById.setText("MyFragment2");
+		Button btn = (Button) view.findViewById(R.id.btn);
+		btn.setText("this is a new button");
 		return view;
 	}
 }
