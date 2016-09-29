@@ -24,7 +24,7 @@ public class FragmentTestActivity extends Activity {
 				// add a fragment in an activity
 				FragmentManager manager = getFragmentManager();
 				manager.beginTransaction()//
-						.add(root.getId(), new MyFragment1())//
+						.addToBackStack(null).add(root.getId(), new MyFragment1())//
 						.commit();
 			}
 		});
