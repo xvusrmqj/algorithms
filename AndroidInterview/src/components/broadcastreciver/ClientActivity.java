@@ -1,17 +1,10 @@
 package components.broadcastreciver;
 
 import android.app.Activity;
-import android.content.BroadcastReceiver;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
-import components.activity.task.SingleTaskActivity1;
 
 public class ClientActivity extends Activity {
 

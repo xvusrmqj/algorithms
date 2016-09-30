@@ -6,12 +6,10 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TextView;
 import android.widget.Toast;
 import components.activity.task.SingleTaskActivity1;
 
 public class MainActivity extends Activity {
-	private static int count = 0;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -24,12 +22,14 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onNewIntent(Intent intent) {
 		super.onNewIntent(intent);
+		Log.e("singleTask", "----MainActivity-onNewIntent=");
 	}
 
 	@Override
 	protected void onResume() {
 		super.onResume();
-		Log.e("singleTask", "----MainActivity-onResume-count=" + count);
+
+		Log.e("singleTask", "----MainActivity-onResume-");
 	}
 
 	@Override

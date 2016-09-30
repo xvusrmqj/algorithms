@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
 public class SingleTaskActivity1 extends Activity{
@@ -12,13 +13,25 @@ public class SingleTaskActivity1 extends Activity{
 		super.onCreate(savedInstanceState);
 		TextView textView = new TextView(this);
 		textView.setText("SingleTaskActivity1");
+		textView.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				startActivity(new Intent(SingleTaskActivity1.this, SingleTaskActivity2.class));
+			}
+		});
 		setContentView(textView);
 		Log.e("singleTask", "----Activity1-onCreate-");
 	}
 	@Override
+	protected void onNewIntent(Intent intent) {
+		super.onNewIntent(intent);
+		Log.e("singleTask", "----Activity1-onNewIntent=");
+	}
+	@Override
 	protected void onResume() {
 		super.onResume();
-		startActivity(new Intent(this, SingleTaskActivity2.class));
+		Log.e("singleTask", "----Activity1-onResume-");
 	}
 	@Override
 	protected void onStop() {

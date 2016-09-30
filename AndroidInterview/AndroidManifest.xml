@@ -4,6 +4,9 @@
     android:versionCode="1"
     android:versionName="1.0" >
 
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" >
+    </uses-permission>
+
     <uses-sdk
         android:minSdkVersion="15"
         android:targetSdkVersion="15" />
@@ -13,20 +16,41 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
-        <activity
-            android:name=".MainActivity"
-            android:label="@string/app_name"
-            android:launchMode="singleTask" >
+        <activity android:name="components.activity.fragment.FragmentTestActivity" >
         </activity>
-        <activity android:name="components.activity.task.SingleTaskActivity1" />
+        <activity
+            android:name="components.activity.task.SingleTaskActivity1"
+            android:launchMode="singleTask" >
+            <intent-filter>
+                <action android:name="android.intent.action.SingleTaskActivity1" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <activity android:name="components.activity.task.SingleTaskActivity2" />
-        <activity android:name="components.activity.task.SingleTaskActivity3" />
-        <activity android:name="components.activity.task.SingleTaskActivity4" />
+        <activity
+            android:name="components.activity.task.SingleTaskActivity3"
+            android:launchMode="singleInstance" />
+        <activity android:name="components.activity.LifeTimeActivity" >
+        </activity>
+        <!-- Activity与View事件分发 -->
+
+        <activity android:name="components.activity.dispatchevent.EventActivity" >
+        </activity>
+        <!-- 将App退出 -->
+
+        <activity android:name="components.activity.FinishAppActivity" >
+        </activity>
+        <!-- 将Activity设置成window形式 -->
+        <activity
+            android:name="components.activity.WindowActivity"
+            android:theme="@android:style/Theme.Dialog" >
+        </activity>
         <!-- 广播 -->
         <activity android:name="components.broadcastreciver.ClientActivity" >
         </activity>
 
-        <receiver android:name="components.broadcastreciver.CommonReciver" >
+        <receiver android:name="components.broadcastreciver.CommonReceiver" >
             <intent-filter>
                 <action android:name="android.intent.action.LVTESTRECEIVER" />
             </intent-filter>
@@ -75,11 +99,6 @@
         </activity>
         <!-- 使用IntentService进程耗时任务 -->
         <activity android:name="components.service.Client" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <service android:name="components.service.IntentServiceTest" />
@@ -90,6 +109,25 @@
         <activity android:name="view.three_scroll_ways.AnimationActivity" >
         </activity>
         <activity android:name="view.three_scroll_ways.LayoutActivity" >
+        </activity>
+        <!-- Android 性能优化 -->
+        <activity android:name="optimize.GetInfoActivity" >
+        </activity>
+        <!-- Android音乐播放 -->
+        <activity android:name="projects.mediaplayer.MainActivity" >
+        </activity>
+        <!-- Android动画 -->
+        <activity android:name="animation.ValueAnimatorTest" >
+        </activity>
+        <activity android:name="animation.ObjectAnimatorTest" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!-- Android Bitmap -->
+        <activity android:name="optimize.bitmap.BitmapActivity" >
         </activity>
     </application>
 
