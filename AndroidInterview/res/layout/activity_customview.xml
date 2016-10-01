@@ -24,8 +24,15 @@
             custom:leftTextColor="#ffffff"
             custom:textColor="#ffffff"
             custom:textSize="12sp"
-            custom:tittle="lv tittle--" >
+            custom:tittle="lv tittle" >
         </view.customview.uimodule.TopBar>
     </RelativeLayout>
+
+    <view.customview.view.ToggleButton
+        android:id="@+id/toggle_btn"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:background="#0f00bc"
+        android:layout_gravity="center_horizontal" />
 
 </LinearLayout>
