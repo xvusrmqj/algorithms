@@ -12,6 +12,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -26,10 +27,14 @@ public class ViewPagerActivity extends Activity implements View.OnClickListener 
 	private LinearLayout layout1;
 	private LinearLayout layout2;
 	private LinearLayout layout3;
+	private LinearLayout layoutBottom1;
+	private LinearLayout layoutBottom2;
+	private LinearLayout layoutBottom3;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		requestWindowFeature(Window.FEATURE_NO_TITLE);//隐藏标题栏
 		setContentView(R.layout.activity_viewpager);
 		initView();
 		initEvent();
@@ -37,9 +42,24 @@ public class ViewPagerActivity extends Activity implements View.OnClickListener 
 	}
 
 	private void initEvent() {
-		tv1.setOnClickListener(this);
-		tv2.setOnClickListener(this);
-		tv3.setOnClickListener(this);
+		layoutBottom1.setOnClickListener(this);
+		layoutBottom2.setOnClickListener(this);
+		layoutBottom3.setOnClickListener(this);
+	}
+
+	@Override
+	public void onClick(View v) {
+		resetViewColor();
+		if (v == layoutBottom1) {
+			pager.setCurrentItem(0);
+			tv1.setTextColor(getResources().getColor(android.R.color.holo_red_dark));
+		} else if (v == layoutBottom2) {
+			pager.setCurrentItem(1);
+			tv2.setTextColor(getResources().getColor(android.R.color.holo_red_dark));
+		} else if (v == layoutBottom3) {
+			pager.setCurrentItem(2);
+			tv3.setTextColor(getResources().getColor(android.R.color.holo_red_dark));
+		}
 	}
 
 	private void setAdapter() {
@@ -69,7 +89,7 @@ public class ViewPagerActivity extends Activity implements View.OnClickListener 
 		};
 		pager.setAdapter(pagerAdapter);
 		pager.addOnPageChangeListener(new OnPageChangeListener() {
-			
+
 			@Override
 			public void onPageSelected(int arg0) {
 				resetViewColor();
@@ -88,15 +108,15 @@ public class ViewPagerActivity extends Activity implements View.OnClickListener 
 					break;
 				}
 			}
-			
+
 			@Override
 			public void onPageScrolled(int arg0, float arg1, int arg2) {
-				
+
 			}
-			
+
 			@Override
 			public void onPageScrollStateChanged(int arg0) {
-				
+
 			}
 		});
 	}
@@ -105,6 +125,9 @@ public class ViewPagerActivity extends Activity implements View.OnClickListener 
 		tv1 = (TextView) findViewById(R.id.viewpager_tv1);
 		tv2 = (TextView) findViewById(R.id.viewpager_tv2);
 		tv3 = (TextView) findViewById(R.id.viewpager_tv3);
+		layoutBottom1 = (LinearLayout) findViewById(R.id.viewpager_bottom_item1);
+		layoutBottom2 = (LinearLayout) findViewById(R.id.viewpager_bottom_item2);
+		layoutBottom3 = (LinearLayout) findViewById(R.id.viewpager_bottom_item3);
 		pager = (ViewPager) findViewById(R.id.viewpager);
 		layout1 = (LinearLayout) getLayoutInflater().inflate(R.layout.viewpager1, null);
 		layout2 = (LinearLayout) getLayoutInflater().inflate(R.layout.viewpager2, null);
@@ -112,22 +135,6 @@ public class ViewPagerActivity extends Activity implements View.OnClickListener 
 		list.add(layout1);
 		list.add(layout2);
 		list.add(layout3);
-	}
-
-	@Override
-	public void onClick(View v) {
-		resetViewColor();
-		((TextView) v).setTextColor(getResources().getColor(android.R.color.holo_red_dark));
-		TextView tv = (TextView) v;
-		if (tv == tv1) {
-			pager.setCurrentItem(0);
-		} else if (tv == tv2) {
-			pager.setCurrentItem(1);
-
-		} else if (tv == tv3) {
-			pager.setCurrentItem(2);
-
-		}
 	}
 
 	private void resetViewColor() {

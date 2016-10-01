@@ -110,6 +110,17 @@
         </activity>
         <activity android:name="view.three_scroll_ways.LayoutActivity" >
         </activity>
+        <!-- 自定义View 使用组合 -->
+        <activity android:name="view.customview.CustomViewActivity" >
+        </activity>
+        <!-- ViewPager -->
+        <activity android:name="view.viewpager.ViewPagerActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <!-- Android 性能优化 -->
         <activity android:name="optimize.GetInfoActivity" >
         </activity>
@@ -120,11 +131,6 @@
         <activity android:name="animation.ValueAnimatorTest" >
         </activity>
         <activity android:name="animation.ObjectAnimatorTest" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <!-- Android Bitmap -->
         <activity android:name="optimize.bitmap.BitmapActivity" >

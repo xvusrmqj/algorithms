@@ -30,8 +30,8 @@
 
     <view.customview.view.ToggleButton
         android:id="@+id/toggle_btn"
-        android:layout_width="300dp"
-        android:layout_height="200dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:background="#0f00bc"
         android:layout_gravity="center_horizontal" />
 

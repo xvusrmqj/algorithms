@@ -15,7 +15,7 @@ import android.widget.RelativeLayout;
  * 参考:http://blog.csdn.net/cyp331203/article/details/40736027
  * @author lv
  */
-public class ToggleButton extends RelativeLayout {
+public class ToggleButton extends View {
 	/** 
 	 * 开关按钮的背景 
 	 */
