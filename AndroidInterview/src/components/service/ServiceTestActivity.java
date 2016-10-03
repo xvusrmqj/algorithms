@@ -10,7 +10,7 @@ import android.widget.FrameLayout;
 import android.widget.FrameLayout.LayoutParams;
 import android.widget.LinearLayout;
 
-public class Client extends Activity implements View.OnClickListener {
+public class ServiceTestActivity extends Activity implements View.OnClickListener {
 	private Button btn1;
 	private Button btn2;
 
@@ -35,10 +35,10 @@ public class Client extends Activity implements View.OnClickListener {
 	@Override
 	public void onClick(final View view) {
 		if(view==btn1){
-			Intent intent = new Intent(Client.this, ServiceTest.class);
+			Intent intent = new Intent(ServiceTestActivity.this, ServiceTest.class);
 			startService(intent);
 		}else if(view==btn2){
-			Intent intent = new Intent(Client.this, IntentServiceTest.class);
+			Intent intent = new Intent(ServiceTestActivity.this, IntentServiceTest.class);
 			startService(intent);
 		}
 	}

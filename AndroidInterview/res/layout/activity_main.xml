@@ -1,13 +1,169 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/root"
-    android:layout_width="100dp"
-    android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fadingEdge="vertical"
+    android:scrollbars="vertical" >
 
-    <TextView
+   <LinearLayout
+        android:id="@+id/root"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
 
-</LinearLayout>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="FragmentTestActivity"
+            android:text="FragmentTestActivity" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="SingleTaskActivity1"
+            android:text="SingleTaskActivity1" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="LifeTimeActivity"
+            android:text="LifeTimeActivity" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="EventActivity"
+            android:text="EventActivity查看事件分发的打印" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="FinishAppActivity"
+            android:text="FinishAppActivity" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="WindowActivity"
+            android:text="WindowActivity" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="BroadcastClientActivity"
+            android:text="BroadcastClientActivity" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="MessengerClient"
+            android:text="MessengerClient" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="ProviderActivity"
+            android:text="ProviderActivity" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="四种主线程与后台线程交互" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="ViewPost"
+            android:text="ViewPost" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="RunOnUiThread"
+            android:text="RunOnUiThread" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="HandlerSendMsg"
+            android:text="HandlerSendMsg" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="HandlerPostRunnable"
+            android:text="HandlerPostRunnable" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="AsyncTaskTest"
+            android:text="AsyncTaskTest" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="ServiceTestActivity"
+            android:text="ServiceTestActivity" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="View的三种滑动处理方式 " />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="ScrollActivity"
+            android:text="ScrollActivity" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="AnimationActivity"
+            android:text="AnimationActivity" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="LayoutActivity"
+            android:text="LayoutActivity" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="CustomViewActivity"
+            android:text="CustomViewActivity" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="ViewPagerActivity"
+            android:text="ViewPagerActivity" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="GetInfoActivity"
+            android:text="GetInfoActivity" />
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="MediaplayerActivity"
+            android:text="MediaplayerActivity" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="ValueAnimatorTest"
+            android:text="ValueAnimatorTest" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="ObjectAnimatorTest"
+            android:text="ObjectAnimatorTest" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="BitmapActivity"
+            android:text="BitmapActivity" />
+    </LinearLayout>
+
+</ScrollView>

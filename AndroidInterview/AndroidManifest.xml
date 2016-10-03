@@ -16,12 +16,23 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
+
+        <!-- MainActivity -->
+        <activity android:name="com.example.androidinterview.MainActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!-- FragmentTest -->
         <activity android:name="components.activity.fragment.FragmentTestActivity" >
         </activity>
+        <!-- Activity的启动模式 -->
         <activity
             android:name="components.activity.task.SingleTaskActivity1"
             android:launchMode="singleTask" >
-            <intent-filter>
+           	<intent-filter>
                 <action android:name="android.intent.action.SingleTaskActivity1" />
 
                 <category android:name="android.intent.category.DEFAULT" />
@@ -31,14 +42,13 @@
         <activity
             android:name="components.activity.task.SingleTaskActivity3"
             android:launchMode="singleInstance" />
+        <!-- Activity的生命周期 -->
         <activity android:name="components.activity.LifeTimeActivity" >
         </activity>
         <!-- Activity与View事件分发 -->
-
         <activity android:name="components.activity.dispatchevent.EventActivity" >
         </activity>
         <!-- 将App退出 -->
-
         <activity android:name="components.activity.FinishAppActivity" >
         </activity>
         <!-- 将Activity设置成window形式 -->
@@ -47,7 +57,7 @@
             android:theme="@android:style/Theme.Dialog" >
         </activity>
         <!-- 广播 -->
-        <activity android:name="components.broadcastreciver.ClientActivity" >
+        <activity android:name="components.broadcastreciver.BroadcastClientActivity" >
         </activity>
 
         <receiver android:name="components.broadcastreciver.CommonReceiver" >
@@ -98,7 +108,7 @@
         <activity android:name="multi_thread.AsyncTaskTest" >
         </activity>
         <!-- 使用IntentService进程耗时任务 -->
-        <activity android:name="components.service.Client" >
+        <activity android:name="components.service.ServiceTestActivity" >
         </activity>
 
         <service android:name="components.service.IntentServiceTest" />
@@ -115,17 +125,13 @@
         </activity>
         <!-- ViewPager -->
         <activity android:name="view.viewpager.ViewPagerActivity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <!-- Android 性能优化 -->
         <activity android:name="optimize.GetInfoActivity" >
         </activity>
         <!-- Android音乐播放 -->
-        <activity android:name="projects.mediaplayer.MainActivity" >
+        <activity android:name="projects.mediaplayer.MediaplayerActivity" >
         </activity>
         <!-- Android动画 -->
         <activity android:name="animation.ValueAnimatorTest" >

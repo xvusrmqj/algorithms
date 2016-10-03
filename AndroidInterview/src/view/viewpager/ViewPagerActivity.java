@@ -17,19 +17,20 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class ViewPagerActivity extends Activity implements View.OnClickListener {
-	private TextView tv1;
-	private TextView tv2;
-	private TextView tv3;
-
-	private ViewPager pager;
-	private List<View> list = new ArrayList<View>();
-
-	private LinearLayout layout1;
-	private LinearLayout layout2;
-	private LinearLayout layout3;
+	//底栏的三个布局与布局中的textview.
 	private LinearLayout layoutBottom1;
 	private LinearLayout layoutBottom2;
 	private LinearLayout layoutBottom3;
+	private TextView tv1;
+	private TextView tv2;
+	private TextView tv3;
+	
+	private ViewPager pager;
+	private List<View> list = new ArrayList<View>();
+	//每个页面是一个Linearlayout
+	private LinearLayout layout1;
+	private LinearLayout layout2;
+	private LinearLayout layout3;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

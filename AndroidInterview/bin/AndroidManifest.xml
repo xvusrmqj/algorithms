@@ -4,6 +4,9 @@
     android:versionCode="1"
     android:versionName="1.0" >
 
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" >
+    </uses-permission>
+
     <uses-sdk
         android:minSdkVersion="15"
         android:targetSdkVersion="15" />
@@ -13,17 +16,51 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
-        <activity
-            android:name=".MainActivity"
-            android:label="@string/app_name"
-            android:launchMode="singleTask" >
-        </activity>
-        <activity android:name="components.activity.task.SingleTaskActivity1" />
-        <activity android:name="components.activity.task.SingleTaskActivity2" />
-        <activity android:name="components.activity.task.SingleTaskActivity3" />
-        <activity android:name="components.activity.task.SingleTaskActivity4" />
 
-        <receiver android:name="components.broadcastreciver.CommonReciver" >
+        <!-- MainActivity -->
+        <activity android:name="com.example.androidinterview.MainActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!-- FragmentTest -->
+        <activity android:name="components.activity.fragment.FragmentTestActivity" >
+        </activity>
+        <!-- Activity的启动模式 -->
+        <activity
+            android:name="components.activity.task.SingleTaskActivity1"
+            android:launchMode="singleTask" >
+           	<intent-filter>
+                <action android:name="android.intent.action.SingleTaskActivity1" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name="components.activity.task.SingleTaskActivity2" />
+        <activity
+            android:name="components.activity.task.SingleTaskActivity3"
+            android:launchMode="singleInstance" />
+        <!-- Activity的生命周期 -->
+        <activity android:name="components.activity.LifeTimeActivity" >
+        </activity>
+        <!-- Activity与View事件分发 -->
+        <activity android:name="components.activity.dispatchevent.EventActivity" >
+        </activity>
+        <!-- 将App退出 -->
+        <activity android:name="components.activity.FinishAppActivity" >
+        </activity>
+        <!-- 将Activity设置成window形式 -->
+        <activity
+            android:name="components.activity.WindowActivity"
+            android:theme="@android:style/Theme.Dialog" >
+        </activity>
+        <!-- 广播 -->
+        <activity android:name="components.broadcastreciver.BroadcastClientActivity" >
+        </activity>
+
+        <receiver android:name="components.broadcastreciver.CommonReceiver" >
             <intent-filter>
                 <action android:name="android.intent.action.LVTESTRECEIVER" />
             </intent-filter>
@@ -41,6 +78,24 @@
 
         <activity android:name="ipc.messager_test.MessengerClient" >
         </activity>
+        <!-- 使用AIDL进行IPC通信 -->
+        <service
+            android:name="ipc.aidl_test.service.BookManagerService"
+            android:process=":remote1" >
+        </service>
+
+        <activity android:name="ipc.aidl_test.client.BookManagerClient" >
+        </activity>
+        <!-- 使用ContentProvider进行IPC通信 -->
+        <provider
+            android:name="ipc.contentprovider.server.BookProvider"
+            android:authorities="ipc.contentprovider.BookProvider"
+            android:permission="ipc.contentprovider.BookProvider"
+            android:process=":provider" >
+        </provider>
+
+        <activity android:name="ipc.contentprovider.client.ProviderActivity" >
+        </activity>
         <!-- 主线程与后台线程交互 -->
         <activity android:name="multi_thread.ViewPost" >
         </activity>
@@ -51,10 +106,40 @@
         <activity android:name="multi_thread.HandlerPostRunnable" >
         </activity>
         <activity android:name="multi_thread.AsyncTaskTest" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        </activity>
+        <!-- 使用IntentService进程耗时任务 -->
+        <activity android:name="components.service.ServiceTestActivity" >
+        </activity>
+
+        <service android:name="components.service.IntentServiceTest" />
+        <service android:name="components.service.ServiceTest" />
+        <!-- View的三种滑动处理方式 -->
+        <activity android:name="view.three_scroll_ways.ScrollActivity" >
+        </activity>
+        <activity android:name="view.three_scroll_ways.AnimationActivity" >
+        </activity>
+        <activity android:name="view.three_scroll_ways.LayoutActivity" >
+        </activity>
+        <!-- 自定义View 使用组合 -->
+        <activity android:name="view.customview.CustomViewActivity" >
+        </activity>
+        <!-- ViewPager -->
+        <activity android:name="view.viewpager.ViewPagerActivity" >
+
+        </activity>
+        <!-- Android 性能优化 -->
+        <activity android:name="optimize.GetInfoActivity" >
+        </activity>
+        <!-- Android音乐播放 -->
+        <activity android:name="projects.mediaplayer.MediaplayerActivity" >
+        </activity>
+        <!-- Android动画 -->
+        <activity android:name="animation.ValueAnimatorTest" >
+        </activity>
+        <activity android:name="animation.ObjectAnimatorTest" >
+        </activity>
+        <!-- Android Bitmap -->
+        <activity android:name="optimize.bitmap.BitmapActivity" >
         </activity>
     </application>
 

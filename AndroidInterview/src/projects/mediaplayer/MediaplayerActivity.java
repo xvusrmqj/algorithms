@@ -8,7 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends Activity {
+public class MediaplayerActivity extends Activity {
 	private MediaPlayer mediaPlayer;
 
 	@Override

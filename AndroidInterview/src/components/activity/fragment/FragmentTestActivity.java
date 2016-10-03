@@ -13,7 +13,7 @@ public class FragmentTestActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		final ViewGroup root = (ViewGroup) getLayoutInflater().inflate(R.layout.activity_main, null);
+		final ViewGroup root = (ViewGroup) getLayoutInflater().inflate(R.layout.activity_fragmenttest, null);
 		Button btn = new Button(this);
 		btn.setText("start a fragment");
 		btn.setId(1000);

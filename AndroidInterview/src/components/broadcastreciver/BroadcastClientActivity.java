@@ -6,7 +6,7 @@ import android.content.IntentFilter;
 import android.os.Bundle;
 import android.widget.Button;
 
-public class ClientActivity extends Activity {
+public class BroadcastClientActivity extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +18,7 @@ public class ClientActivity extends Activity {
 
 	@Override
 	protected void onStart() {
+		super.onStart();
 		CommonReceiver receiver = new CommonReceiver();
 		registerReceiver(receiver, new IntentFilter("hello.client"));
 		unregisterReceiver(receiver);
