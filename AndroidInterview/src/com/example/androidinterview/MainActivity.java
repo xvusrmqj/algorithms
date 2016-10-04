@@ -95,6 +95,9 @@ public class MainActivity extends Activity {
 	public void ViewPagerActivity(View view) {
 		startActivity(new Intent(this, view.viewpager.ViewPagerActivity.class));
 	}
+	public void ViewPagerIndicatorActivity(View view) {
+		startActivity(new Intent(this, view.viewpager.custom_viewpager_indictor.ViewPagerIndicatorActivity.class));
+	}
 
 	public void GetInfoActivity(View view) {
 		startActivity(new Intent(this, optimize.GetInfoActivity.class));

@@ -9,5 +9,8 @@
         <attr name="leftTextColor" format="color" />
         <attr name="leftBackground" format="reference|color" />
     </declare-styleable>
+    <declare-styleable name="ViewPagerIndicator">
+        <attr name="visible_tab_count" format="integer" />
+    </declare-styleable>
 
 </resources>
