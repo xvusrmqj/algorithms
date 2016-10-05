@@ -22,11 +22,15 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 /**
+ * 自定义的ViewGroup, 主要和LinearLayout的区别就是
+ * 1. 有一个指示的小三角形
+ * 2. 这个三角形随着ViewPager能滑动.
  * http://www.imooc.com/learn/615
  * @author lv
  *
  */
 public class ViewPagerIndicator extends LinearLayout {
+	//下面是画三角形所需要的一些参数
 	private Paint paint;
 	private Path path;
 	private int triangleW;
@@ -37,13 +41,21 @@ public class ViewPagerIndicator extends LinearLayout {
 
 	private int tabVisibleCount;
 
+	/**
+	 * 需要先调用setVisibleTabCount, 后调用setTabItemTitles
+	 * @param count
+	 */
 	public void setVisibleTabCount(int count) {
 		this.tabVisibleCount = count;
 	}
 
+	/**
+	 * 动态设置Indicator的项
+	 * @param list
+	 */
 	public void setTabItemTitles(List<String> list) {
 		if (list != null && list.size() > 0) {
-			this.removeAllViews();
+			this.removeAllViews();//先把XML里设的全移除
 			for (String string : list) {
 				TextView tv = new TextView(getContext());
 				LinearLayout.LayoutParams lp = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
@@ -75,6 +87,9 @@ public class ViewPagerIndicator extends LinearLayout {
 
 	}
 
+	/**
+	 * 设置XML里的那些Indicator项
+	 */
 	@Override
 	protected void onFinishInflate() {
 		super.onFinishInflate();
@@ -85,11 +100,15 @@ public class ViewPagerIndicator extends LinearLayout {
 			View view = getChildAt(i);
 			LinearLayout.LayoutParams layoutParams = (LayoutParams) view.getLayoutParams();
 			layoutParams.weight = 0;
-			layoutParams.width = getScreenWidth() / tabVisibleCount;
+			layoutParams.width = getScreenWidth() / tabVisibleCount; //就是取了一下屏幕宽度,再根据屏幕宽度改了一个宽度,至于这样吗?
 			view.setLayoutParams(layoutParams);
 		}
 	}
 
+	/**
+	 * 取得屏幕宽度
+	 * @return
+	 */
 	private int getScreenWidth() {
 		WindowManager wm = (WindowManager) getContext().getSystemService(Context.WINDOW_SERVICE);
 		DisplayMetrics m = new DisplayMetrics();
@@ -97,6 +116,9 @@ public class ViewPagerIndicator extends LinearLayout {
 		return m.widthPixels;
 	}
 
+	/**
+	 * ViewGroup一般覆盖这个方法,而不是onDraw, 它们的区别在哪?
+	 */
 	@Override
 	protected void dispatchDraw(Canvas canvas) {
 		canvas.save();
@@ -106,6 +128,10 @@ public class ViewPagerIndicator extends LinearLayout {
 		super.dispatchDraw(canvas);
 	}
 
+	/**
+	 * onSizeChanged() is called when your view is first assigned a size, and again if the size of your view changes for any reason.
+	 * 这个方法的好处就是能得到控件的宽度,高度(以参数的形式给出)
+	 */
 	@Override
 	protected void onSizeChanged(int w, int h, int oldw, int oldh) {
 		super.onSizeChanged(w, h, oldw, oldh);
@@ -123,6 +149,11 @@ public class ViewPagerIndicator extends LinearLayout {
 		path.close();
 	}
 
+	/**
+	 * 这个就是三角形滑动的方法了.
+	 * @param position
+	 * @param positionOffset
+	 */
 	public void scroll(int position, float positionOffset) {
 		int tabWidth = getWidth() / tabVisibleCount;
 		translationX = (int) (tabWidth * (positionOffset + position));

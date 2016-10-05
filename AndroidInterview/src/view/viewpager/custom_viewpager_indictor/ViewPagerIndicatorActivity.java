@@ -20,13 +20,21 @@ import android.view.Window;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class ViewPagerIndicatorActivity extends FragmentActivity implements View.OnClickListener {
-
+/**
+ * 用于显示自定义ViewPager
+ * 如果想让上边的项可以点击的话,可以继承onclickListener
+ * @author lv
+ *
+ */
+public class ViewPagerIndicatorActivity extends FragmentActivity {
+	//需要ViewPager , ViewPagerIndicator, PagerAdaptor
 	private ViewPager pager;
 	private ViewPagerIndicator indicator;
-	private List<String> listContent = Arrays.asList("111", "222", "333","4", "5", "6","7", "8", "9");
-	private List<ViewPagerFragment> listFragment = new ArrayList<ViewPagerFragment>();
 	private FragmentPagerAdapter adapter;
+	//listContent用于放ViewPagerIndicator里的项
+	private List<String> listContent = Arrays.asList("111", "222", "333", "4", "5", "6", "7", "8", "9");
+	//listFragment用于放ViewPager里的项
+	private List<ViewPagerFragment> listFragment = new ArrayList<ViewPagerFragment>();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -34,34 +42,28 @@ public class ViewPagerIndicatorActivity extends FragmentActivity implements View
 		requestWindowFeature(Window.FEATURE_NO_TITLE);//隐藏标题栏
 		setContentView(R.layout.activity_viewpager_custom_indicator);
 		initView();
-		
-		indicator.setVisibleTabCount(3);
-		indicator.setTabItemTitles(Arrays.asList("a","b","c","d","e","f","g","h","i"));
-		
+
+		indicator.setVisibleTabCount(3);//设置一屏上显示的项数量
+		indicator.setTabItemTitles(Arrays.asList("a", "b", "c", "d", "e", "f", "g", "h", "i"));//这是所有的项
+
 		pager.setAdapter(adapter);
 		pager.addOnPageChangeListener(new OnPageChangeListener() {
-			
+
 			@Override
 			public void onPageSelected(int arg0) {
-				
+
 			}
-			
+
 			@Override
 			public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 				indicator.scroll(position, positionOffset);
 			}
-			
+
 			@Override
 			public void onPageScrollStateChanged(int arg0) {
-				
+
 			}
 		});
-	}
-
-	@Override
-	public void onClick(View v) {
-		resetViewColor();
-
 	}
 
 	private void initView() {
@@ -86,7 +88,4 @@ public class ViewPagerIndicatorActivity extends FragmentActivity implements View
 		};
 	}
 
-	private void resetViewColor() {
-
-	}
 }
