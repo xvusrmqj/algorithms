@@ -17,6 +17,11 @@ import android.os.Environment;
 import android.view.View;
 import android.widget.Button;
 
+/**
+ * 音乐播放器的实现
+ * @author lv
+ *
+ */
 public class MediaplayerActivity extends Activity {
 	private MediaPlayer mediaPlayer;
 	String sdcardPath = Environment.getExternalStorageDirectory().getPath();
@@ -35,6 +40,13 @@ public class MediaplayerActivity extends Activity {
 			e1.printStackTrace();
 		}
 		play();
+		updateLrc();
+	}
+
+	/**
+	 * 更新歌词
+	 */
+	private void updateLrc() {
 		new Thread(new Runnable() {
 			@Override
 			public void run() {
@@ -44,12 +56,15 @@ public class MediaplayerActivity extends Activity {
 					} catch (InterruptedException e) {
 						e.printStackTrace();
 					}
-					view.setCurrentIndex(mediaPlayer.getCurrentPosition()/1000);
+					view.setCurrentIndex(mediaPlayer.getCurrentPosition() / 1000);
 				}
 			}
 		}).start();
 	}
 
+	/**
+	 * 播放
+	 */
 	private void play() {
 		mediaPlayer = new MediaPlayer();
 		try {
@@ -60,13 +75,18 @@ public class MediaplayerActivity extends Activity {
 		}
 		mediaPlayer.start();
 	}
-	
+	/**
+	 * 解析LRC歌词为一个List
+	 * @param lrcPath
+	 * @return
+	 * @throws IOException
+	 */
 	private List<LrcContent> parseLRC(String lrcPath) throws IOException {
 		List<LrcContent> list = new ArrayList<LrcContent>();
 		File file = new File(lrcPath);
 		String line = null;
-		BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(file),"GBK"));
-		while((line = br.readLine())!=null){
+		BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(file), "GBK"));
+		while ((line = br.readLine()) != null) {
 			String[] split = line.split("]");
 			if (split.length == 2) {
 				String content = split[1];
@@ -75,7 +95,7 @@ public class MediaplayerActivity extends Activity {
 				String minus = split[0].substring(1, maohao); //[00:06.01]
 				String second = split[0].substring(maohao + 1, dian); //[00:06.01]
 				int startTime = Integer.parseInt(minus) * 60 + Integer.parseInt(second);
-				System.out.println("startTime="+startTime);
+				System.out.println("startTime=" + startTime);
 				list.add(new LrcContent(content, startTime));
 			}
 		}

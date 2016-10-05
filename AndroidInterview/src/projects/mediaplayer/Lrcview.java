@@ -13,7 +13,7 @@ import android.util.TypedValue;
 import android.view.View;
 
 /**
- * 歌词
+ * 歌词自定义组件
  */
 public class Lrcview extends View {
 
@@ -30,7 +30,10 @@ public class Lrcview extends View {
 	public Lrcview(Context context, AttributeSet attrs) {
 		super(context, attrs);
 	}
-
+	/**
+	 * 必须先setList之后，再调用setCurrentIndex
+	 * @param list
+	 */
 	public void setList(List<LrcContent> list) {
 		this.list = list;
 	}
