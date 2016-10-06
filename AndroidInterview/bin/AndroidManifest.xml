@@ -124,9 +124,8 @@
         <activity android:name="view.customview.CustomViewActivity" >
         </activity>
         <!-- ViewPager -->
-        <activity android:name="view.viewpager.ViewPagerActivity" >
-
-        </activity>
+        <activity android:name="view.viewpager.ViewPagerActivity" />
+        <activity android:name="view.viewpager.custom_viewpager_indictor.ViewPagerIndicatorActivity" />
         <!-- Android 性能优化 -->
         <activity android:name="optimize.GetInfoActivity" >
         </activity>
