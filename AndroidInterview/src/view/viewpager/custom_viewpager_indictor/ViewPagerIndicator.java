@@ -117,7 +117,7 @@ public class ViewPagerIndicator extends LinearLayout {
 	}
 
 	/**
-	 * ViewGroup一般覆盖这个方法,而不是onDraw, 它们的区别在哪?
+	 * dispatchDraw是ViewGroup的方法, View中的dispatchDraw是空实现.
 	 */
 	@Override
 	protected void dispatchDraw(Canvas canvas) {

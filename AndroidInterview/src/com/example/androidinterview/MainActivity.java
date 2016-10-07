@@ -17,6 +17,9 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);
 	}
 
+	public void ContentProviderActivity(View view) {
+		startActivity(new Intent(this, components.contentprovider.ContentProviderActivity.class));
+	}
 	public void FragmentTestActivity(View view) {
 		startActivity(new Intent(this, components.activity.fragment.FragmentTestActivity.class));
 	}
