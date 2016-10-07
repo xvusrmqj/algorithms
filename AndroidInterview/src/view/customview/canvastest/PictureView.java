@@ -15,8 +15,13 @@ import android.graphics.RectF;
 import android.graphics.Region;
 import android.util.AttributeSet;
 import android.view.View;
-
-public class PicView extends View {
+/**
+ * 用于图片浏览的自定义组件.
+ * PictureView
+ * @author lv
+ *
+ */
+public class PictureView extends View {
 
 	private Bitmap dog;
 	private Bitmap girl;
@@ -26,7 +31,7 @@ public class PicView extends View {
 	int girlWidth, girlHeight;
 	RectF rect;
 
-	public PicView(Context context, AttributeSet attrs) {
+	public PictureView(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		dog = BitmapFactory.decodeResource(context.getResources(), R.drawable.dog);
 		girl = BitmapFactory.decodeResource(context.getResources(), R.drawable.girl);
