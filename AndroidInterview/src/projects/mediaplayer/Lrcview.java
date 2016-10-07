@@ -17,7 +17,7 @@ import android.view.View;
  */
 public class Lrcview extends View {
 
-	List<LrcContent> list;
+	List<LrcLineBean> list;
 	int currentIndex;
 
 	Paint currentPaint = new Paint();
@@ -34,7 +34,7 @@ public class Lrcview extends View {
 	 * 必须先setList之后，再调用setCurrentIndex
 	 * @param list
 	 */
-	public void setList(List<LrcContent> list) {
+	public void setList(List<LrcLineBean> list) {
 		this.list = list;
 	}
 

@@ -4,18 +4,14 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <LinearLayout
+    <FrameLayout
+        android:id="@+id/framelayout"
         android:layout_width="match_parent"
         android:layout_height="0px"
-        android:layout_weight="10"
-        android:orientation="vertical" >
+        android:layout_weight="10" >
+    </FrameLayout>
 
-        <projects.mediaplayer.Lrcview
-            android:id="@+id/lrcView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            />
-    </LinearLayout>
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -24,25 +20,33 @@
         android:orientation="horizontal" >
 
         <Button
-            android:id="@+id/back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="back"
             android:text="back" />
 
         <Button
-            android:id="@+id/start_pause"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="start_pause"
-            android:text="start_pause" />
+            android:onClick="start"
+            android:text="start" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="stop"
+            android:text="stop" />
 
         <Button
-            android:id="@+id/forward"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="forward"
             android:text="forward" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="choose"
+            android:text="choose" />
     </LinearLayout>
 
 </LinearLayout>

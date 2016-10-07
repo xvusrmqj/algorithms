@@ -4,11 +4,11 @@ package projects.mediaplayer;
  * @author lv
  *
  */
-public class LrcContent {
+public class LrcLineBean {
 	private String lrcString;
 	private int startTime;
 
-	public LrcContent(String lrcString, int startTime) {
+	public LrcLineBean(String lrcString, int startTime) {
 		this.lrcString = lrcString;
 		this.startTime = startTime;
 	}

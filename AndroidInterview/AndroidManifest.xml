@@ -32,7 +32,7 @@
         <activity
             android:name="components.activity.task.SingleTaskActivity1"
             android:launchMode="singleTask" >
-           	<intent-filter>
+            <intent-filter>
                 <action android:name="android.intent.action.SingleTaskActivity1" />
 
                 <category android:name="android.intent.category.DEFAULT" />
@@ -132,6 +132,9 @@
         <!-- Android音乐播放 -->
         <activity android:name="projects.mediaplayer.MediaplayerActivity" >
         </activity>
+
+        <service android:name="projects.mediaplayer.MediplayerService" >
+        </service>
         <!-- Android动画 -->
         <activity android:name="animation.ValueAnimatorTest" >
         </activity>

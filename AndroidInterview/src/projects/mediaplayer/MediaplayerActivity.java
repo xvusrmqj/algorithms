@@ -1,106 +1,55 @@
 package projects.mediaplayer;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.List;
-
 import com.example.androidinterview.R;
 
 import android.app.Activity;
-import android.media.MediaPlayer;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
+import android.app.LoaderManager.LoaderCallbacks;
+import android.content.ComponentName;
+import android.content.Context;
+import android.content.CursorLoader;
+import android.content.Intent;
+import android.content.Loader;
+import android.content.ServiceConnection;
+import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.IBinder;
+import android.provider.MediaStore;
 import android.view.View;
-import android.widget.Button;
+import projects.mediaplayer.MediplayerService.MediaplayerBinder;
 
 /**
  * 音乐播放器的实现
  * @author lv
  *
  */
-public class MediaplayerActivity extends Activity {
-	private MediaPlayer mediaPlayer;
-	String sdcardPath = Environment.getExternalStorageDirectory().getPath();
-	private String lrcPath = sdcardPath + "/moststar.lrc";
-	private String musicPath = sdcardPath + "/moststar.mp3";
-	Lrcview view;
+public class MediaplayerActivity extends Activity implements LoaderCallbacks<Cursor> {
+
+	MediplayerService mediaplayerService;
+	private ServiceConnection conn = new ServiceConnection() {
+
+		@Override
+		public void onServiceDisconnected(ComponentName name) {
+			mediaplayerService = null;
+		}
+
+		@Override
+		public void onServiceConnected(ComponentName name, IBinder service) {
+			MediplayerService.MediaplayerBinder binder = (MediaplayerBinder) service;
+			mediaplayerService = binder.getService();
+			mediaplayerService.play(Environment.getExternalStorageDirectory().getPath() + "/moststar.mp3");
+		}
+	};
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_mediaplayer_main);
-		view = (Lrcview) findViewById(R.id.lrcView);
-		try {
-			view.setList(parseLRC(lrcPath));
-		} catch (IOException e1) {
-			e1.printStackTrace();
-		}
-		play();
-		updateLrc();
-	}
-
-	/**
-	 * 更新歌词
-	 */
-	private void updateLrc() {
-		new Thread(new Runnable() {
-			@Override
-			public void run() {
-				while (mediaPlayer.isPlaying()) {
-					try {
-						Thread.sleep(5000);
-					} catch (InterruptedException e) {
-						e.printStackTrace();
-					}
-					view.setCurrentIndex(mediaPlayer.getCurrentPosition() / 1000);
-				}
-			}
-		}).start();
-	}
-
-	/**
-	 * 播放
-	 */
-	private void play() {
-		mediaPlayer = new MediaPlayer();
-		try {
-			mediaPlayer.setDataSource(musicPath);
-			mediaPlayer.prepare();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		mediaPlayer.start();
-	}
-	/**
-	 * 解析LRC歌词为一个List
-	 * @param lrcPath
-	 * @return
-	 * @throws IOException
-	 */
-	private List<LrcContent> parseLRC(String lrcPath) throws IOException {
-		List<LrcContent> list = new ArrayList<LrcContent>();
-		File file = new File(lrcPath);
-		String line = null;
-		BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(file), "GBK"));
-		while ((line = br.readLine()) != null) {
-			String[] split = line.split("]");
-			if (split.length == 2) {
-				String content = split[1];
-				int maohao = split[0].indexOf(":");
-				int dian = split[0].indexOf(".");
-				String minus = split[0].substring(1, maohao); //[00:06.01]
-				String second = split[0].substring(maohao + 1, dian); //[00:06.01]
-				int startTime = Integer.parseInt(minus) * 60 + Integer.parseInt(second);
-				System.out.println("startTime=" + startTime);
-				list.add(new LrcContent(content, startTime));
-			}
-		}
-		br.close();
-		return list;
+		getLoaderManager().initLoader(0, null, this);
+		toLrcFragment(null);
 	}
 
 	public void back(View v) {
@@ -112,16 +61,74 @@ public class MediaplayerActivity extends Activity {
 		System.out.println("--forward--");
 	}
 
-	public void start_pause(View v) {
-		Button b = (Button) v;
-		if (mediaPlayer != null)
-			if (mediaPlayer.isPlaying()) {
-				mediaPlayer.pause();
-				b.setText("start");
-				System.out.println("--start_pause--");
-			} else {
-				b.setText("pause");
-				mediaPlayer.start();
-			}
+	public void start(View v) {
+		Intent intent = new Intent(this, MediplayerService.class);
+		startService(intent);
+		bindService(intent, conn, Context.BIND_AUTO_CREATE);
 	}
+
+	public void stop(View v) {
+		unbindService(conn);
+		stopService(new Intent(this, MediplayerService.class));//FIXME 应该允许后台播放，但是什么时候停止？
+	}
+
+	public void choose(View v) {
+		toChooseFragment();
+		System.out.println("--choose--");
+	}
+
+	private void toChooseFragment() {
+		FragmentManager fm = getFragmentManager();
+		FragmentTransaction transaction = fm.beginTransaction();
+		transaction.replace(R.id.framelayout, new ChooseMusicFragment());
+		transaction.commit();
+	}
+
+	public void toLrcFragment(MusicBean music) {
+		FragmentManager fm = getFragmentManager();
+		FragmentTransaction transaction = fm.beginTransaction();
+		LrcFragment fragment = new LrcFragment();
+		if(music!=null)
+			fragment.setMusic(music);
+		transaction.replace(R.id.framelayout,fragment );
+		transaction.commit();
+	}
+
+	String[] columns = { MediaStore.Audio.Media.DATA, //
+			MediaStore.Audio.Media._ID, //
+			MediaStore.Audio.Media.TITLE, //
+			MediaStore.Audio.Media.DISPLAY_NAME, //
+	};
+
+	@Override
+	public Loader<Cursor> onCreateLoader(int id, Bundle args) {
+		System.out.println("onCreateLoader");
+		Uri baseUri = MediaStore.Audio.Media.EXTERNAL_CONTENT_URI;
+		return new CursorLoader(this, baseUri, columns, null, null, null);
+	}
+
+	@Override
+	public void onLoadFinished(Loader<Cursor> loader, Cursor cursor) {
+		System.out.println("onLoadFinished");
+		// TODO Auto-generated method stub
+		if (cursor != null) {
+			while (cursor.moveToNext()) {
+				String _ID = cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Media._ID));
+				String DATA = cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Media.DATA));
+				String title = cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Media.TITLE));
+				String displayName = cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Media.DISPLAY_NAME));
+				System.out.println("onLoadFinished--_ID" + _ID);
+				System.out.println("onLoadFinished--DATA" + DATA);
+				System.out.println("onLoadFinished--title" + title);
+				System.out.println("onLoadFinished--displayName" + displayName);
+			}
+		}
+	}
+
+	@Override
+	public void onLoaderReset(Loader<Cursor> loader) {
+		System.out.println("onLoaderReset");
+		// TODO Auto-generated method stub
+	}
+
 }
