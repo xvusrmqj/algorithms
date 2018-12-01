@@ -2,7 +2,7 @@
 this is the repository that include common algorithms programm.
 Some relevant information about as follows:
 - Programming language : JAVA
-- IDE: eclipse
+- IDE: eclipse -> IDEA
 - Operating System：Window
 
 there are serverl projects in the repository.

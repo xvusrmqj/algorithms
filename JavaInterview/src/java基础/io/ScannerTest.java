@@ -55,9 +55,8 @@ public class ScannerTest {
 	 * 
 	 * @throws FileNotFoundException
 	 */
-	// the ".project" file is in the CommonTools directory.
 	public void fromFile() throws FileNotFoundException {
-		File file = new File(".project");
+		File file = new File("index.md");
 		// System.out.println(file.getAbsolutePath());
 		Scanner scanner = new Scanner(new FileInputStream(file));
 		while (scanner.hasNextLine()) {
