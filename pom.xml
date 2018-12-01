@@ -15,9 +15,6 @@
             <version>4.13-beta-1</version>
         </dependency>
     </dependencies>
-    <modules>
-        <module>CodeProblems</module>
-    </modules>
     <build>
         <plugins>
             <plugin>
