@@ -21,6 +21,7 @@ public class 单链表 {
      */
     public static Node 反转链表(Node node){
         // 这里会需要3个指针，其中两个代表从谁指向谁，另一个代表遍历的指针。
+        // 这三个指针都需要。因为没有一个可以做这两个作用。
         if(node == null ||node.next == null){
             return node;
         }
@@ -28,8 +29,9 @@ public class 单链表 {
         Node p = node;
         Node q = p.next;
         node = node.next;
-
+        // 起始的特例
         p.next = null;
+        // 中间的循环不变量的这步骤先写出来就对了一半。
         while (node!=null){
             node = node.next;
             q.next = p;
