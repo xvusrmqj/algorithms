@@ -2,15 +2,17 @@ package 数据结构;
 
 public class 单链表 {
     public static void main(String[] args) {
-        Node node2 = new Node(1,new Node(2,new Node(3,null)));
+        Node node2 = new Node(1, new Node(2, new Node(3, null)));
         System.out.println(node2);
-        System.out.println(反转链表(node2));
+        System.out.println(反转链表2(node2));
 
     }
-    public static void 头插法建立链表(Node node){
+
+    public static void 头插法建立链表(Node node) {
 
     }
-    public static void 尾插法建立打印链表(Node node){
+
+    public static void 尾插法建立打印链表(Node node) {
 
     }
 
@@ -19,10 +21,23 @@ public class 单链表 {
      *
      * @param node
      */
-    public static Node 反转链表(Node node){
+    // 新建节点： 使用头插法
+    public static Node 反转链表2(Node node) {
+        Node head = new Node(-1, null);
+        while (node != null) {
+            Node cur = new Node(node.val, node.next);
+            cur.next = head.next;
+            head.next = cur;
+            node = node.next;
+        }
+        return head.next;
+    }
+
+    // 不新建节点： 使用三指针法
+    public static Node 反转链表(Node node) {
         // 这里会需要3个指针，其中两个代表从谁指向谁，另一个代表遍历的指针。
         // 这三个指针都需要。因为没有一个可以做这两个作用。
-        if(node == null ||node.next == null){
+        if (node == null || node.next == null) {
             return node;
         }
 
@@ -32,7 +47,7 @@ public class 单链表 {
         // 起始的特例
         p.next = null;
         // 中间的循环不变量的这步骤先写出来就对了一半。
-        while (node!=null){
+        while (node != null) {
             node = node.next;
             q.next = p;
             p = q;
@@ -40,7 +55,8 @@ public class 单链表 {
         }
         return p;
     }
-    static class Node{
+
+    static class Node {
         int val;
         Node next;
 
@@ -54,11 +70,11 @@ public class 单链表 {
         public String toString() {
             Node node = this;
             StringBuilder result = new StringBuilder();
-            while (node!=null){
-                result.append(node.val +"->");
+            while (node != null) {
+                result.append(node.val + "->");
                 node = node.next;
             }
-            return result.substring(0,result.length()-2);
+            return result.substring(0, result.length() - 2);
         }
     }
 
