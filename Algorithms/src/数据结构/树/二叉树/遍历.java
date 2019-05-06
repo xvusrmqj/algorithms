@@ -1,6 +1,7 @@
 package 数据结构.树.二叉树;
 
 import java.util.LinkedList;
+import java.util.Stack;
 
 /**
  * 前中后序遍历都相当于图的深度优先搜索
@@ -14,6 +15,11 @@ public class 遍历 {
             preOrderTraverse(node.left);
             preOrderTraverse(node.right);
         }
+    }
+    // 前序遍历
+    public static void preOrderTraverseNonRecursion(Node node){
+        Stack<Node> stack = new Stack<>();
+        // todo
     }
     // 中序遍历
     public static void inOrderTraverse(Node node){
